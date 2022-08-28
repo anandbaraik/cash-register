@@ -73,4 +73,7 @@ table > tr, th, td{
     .container{
         padding: 0.3rem;
     }
-}  
+} 
+.error-msg{
+    font-size: 01.2rem;
+}
