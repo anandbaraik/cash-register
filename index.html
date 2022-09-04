@@ -25,21 +25,26 @@
                     (Required)
                 </span>
             </label>
-            <input type="number" id="bill-amount">
+            <input type="number" min="1" id="bill-amount">
         </div>
-        <div class="group">
-            <label for="cash-given">
-                Cash Amount Given
-                <span class="required">
-                    (Required)
-                </span>
-            </label>
-            <input type="number" id="cash-given">
+        <button type="button" class="btn next-btn">
+            Next
+        </button>
+        <div class="cash-given-div">
+            <div class="group">
+                <label for="cash-given">
+                    Cash Amount Given
+                    <span class="required">
+                        (Required)
+                    </span>
+                </label>
+                <input type="number" min="1" id="cash-given">
+            </div>
         </div>
         <button type="button" class="btn return-change">
             Check
         </button>
-        <p class="error-msg"></p>
+        <p class="error-msg mt-1"></p>
         <div class="cash-change">
             <table class="table">
                 <caption>

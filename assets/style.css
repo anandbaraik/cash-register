@@ -77,3 +77,9 @@ table > tr, th, td{
 .error-msg{
     font-size: 01.2rem;
 }
+.cash-given-div, .cash-change, .return-change{
+    display: none;
+}
+.mt-1{
+    margin-top: 0.8rem;
+}
