@@ -10,6 +10,7 @@ A cash register manager which helps the user in returning the change to the cust
 ## Tech
 - Html
 - Css
+- JS
 
 ## Run Locally
 
