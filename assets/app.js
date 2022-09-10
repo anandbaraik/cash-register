@@ -14,29 +14,29 @@ function handleNextBtn() {
     hideErorMsg();
     let billAmount = parseInt(billAmountInput.value);
     if(!Number.isInteger(billAmount)) {
-        showErorMsg("Enter valid bill amount.");
+        showErorMsg("Enter valid bill amount. 😠😠");
     } else if(billAmount > 0) {
         document.querySelector('.cash-given-div').style.display = "block";
         document.querySelector('.return-change').style.display = "inline-block";
         nextBtn.style.display = "none";
     } else if(billAmount <= 0) {
-        showErorMsg("Bill amount should be greater than 0");
+        showErorMsg("Bill amount should be greater than 0 😠😠");
     }
 }
 
 function validateBillAmount(billAmount) {
-    if(!Number.isInteger(billAmount)) showErorMsg("Enter valid bill amount.");
-    if(billAmount <= 0) showErorMsg("Bill amount should be greater than 0");
+    if(!Number.isInteger(billAmount)) showErorMsg("Enter valid bill amount. 😠😠");
+    if(billAmount <= 0) showErorMsg("Bill amount should be greater than 0 😠😠");
 }
 
 function validateCashGiven(cashGiven) {
-    if(!Number.isInteger(cashGiven)) showErorMsg("Enter valid cash given amount.");
-    if(cashGiven <= 0) showErorMsg("Cash given amount should be greater than 0");
+    if(!Number.isInteger(cashGiven)) showErorMsg("Enter valid cash given amount. 😠😠");
+    if(cashGiven <= 0) showErorMsg("Cash given amount should be greater than 0 😠😠");
 }
 
 function handleCheckBtn() {
     hideErorMsg();
-
+    document.querySelector('.cash-change').style.display = "none";
     let billAmount = parseInt(billAmountInput.value);
     let cashGiven = parseInt(cashGivenInput.value);
 
@@ -45,9 +45,27 @@ function handleCheckBtn() {
 
     let cashToBeReturn = cashGiven - billAmount;
 
-    if((cashGiven > 0) && (billAmount > 0) && (cashGiven < billAmount)) showErorMsg("Cash is less than bill amount! wanna wash the plates?");
-    if(cashGiven == billAmount) showErorMsg("No amount to be returned.");
-    if(cashToBeReturn > 0) calculateCashToBeReturn(cashToBeReturn);
+    if(
+        (cashGiven > 0) && 
+        (billAmount > 0) && 
+        (cashGiven < billAmount)
+    ){
+        showErorMsg("Cash is less than bill amount! wanna wash the plates? 😀😀");
+    }
+    if(cashGiven == billAmount) {
+        showErorMsg("No amount to be returned.👍👍");
+    }
+    if(
+        (cashGiven > 0) && 
+        (billAmount > 0) &&
+        (cashToBeReturn > 0)
+    ){
+        document.querySelector('.anim').style.display = "block";
+        setTimeout(() => {
+            calculateCashToBeReturn(cashToBeReturn);
+            document.querySelector('.anim').style.display = "none";
+        }, 3000);
+    }
 
 }
 
