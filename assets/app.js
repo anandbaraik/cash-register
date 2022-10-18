@@ -94,11 +94,12 @@ function hideErorMsg() {
 
 function calculateCashToBeReturn(amountToBeReturn) {
     document.querySelector('.cash-change').style.display = "inline-block";
+    //[2000, 500, 100, 20, 10, 5, 1] => 89
     for(let i=0; i<availNotes.length; i++){
-        let notesCount = Math.trunc(amountToBeReturn/availNotes[i]);
-        numOfNotes[i].innerText = notesCount;
-        let remainingAmount = amountToBeReturn % availNotes[i];
-        amountToBeReturn = remainingAmount;
+        let notesCount = Math.trunc(amountToBeReturn/availNotes[i]); // 89/2000 => 0
+        numOfNotes[i].innerText = notesCount; // 2000[0]
+        let remainingAmount = amountToBeReturn % availNotes[i]; // 89%2000 => 0
+        amountToBeReturn = remainingAmount; //89
     }
 }
 
